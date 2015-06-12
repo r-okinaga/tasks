@@ -1,0 +1,15 @@
+<%= form_for comment,url: [comment.persisted? ? "task_comment" : "task_comments"] do |f| %>
+    <table>
+      <tbody>
+      <tr>
+        <th>コメント</th>
+        <td><%=  f.text_area :comment %></td>
+        </tr>
+      <tr>
+        <th>書込み日</th>
+        <td><%=  f.text_field :times %></td>
+      </tr>
+      </tbody>
+    </table>
+    <%= f.submit %>
+<% end %>

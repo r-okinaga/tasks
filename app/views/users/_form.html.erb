@@ -1,0 +1,24 @@
+<ul><% user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+  <% end %>
+</ul>
+<%= form_for user do |f| %>
+    <table>
+      <tbody>
+      <tr>
+        <th>User Name</th>
+        <td><%=  f.text_field :user_name %></td>
+      </tr>
+      <tr>
+        <th>Age</th>
+        <td><%=  f.text_field :age %></td>
+      </tr>
+      <tr>
+        <th>Password</th>
+        <td><%=  f.text_field :password %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <%= f.submit %>
+<% end %>

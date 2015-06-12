@@ -1,0 +1,22 @@
+<h1>タスクリスト</h1>
+
+<div class="clearfix">
+
+
+  <% @tasks.each do |task| %>
+
+    <%= link_to task_path(task), class:"item #{task.color}" do %>
+
+    <div class="item-header"><%= task.id %>:
+      <%= task.task_name %></div>
+        <div class="item-delete">
+          <%= form_for task, method: :delete,data: { confirm: "ほんとうに消しますか？" } do %>
+          <%=image_submit_tag("close_small.png")%><% end %>
+        </div>
+
+    <div class="item-body"><%= simple_format task.description %></div>
+    <div class="item-footer"><%= task.deadline %></div>
+        <% end %>
+      <% end %>
+</div>
+<%= link_to '新規作成', :new_task, class: 'btn' %>

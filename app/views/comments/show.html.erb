@@ -1,0 +1,16 @@
+<h1>Task Detail</h1>
+<%= link_to 'Back', :task_comments %>
+<table>
+  <tbody>
+  <tr>
+    <th>taskID</th>
+    <td><%= @comment.task_id %></td>
+  </tr>
+  <tr>
+    <th>comment</th>
+    <td><%= @comment.comment %></td>
+  </tr>
+  </tbody>
+</table>
+<%= link_to 'Edit', :edit_task_comment %>
+

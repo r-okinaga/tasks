@@ -1,0 +1,149 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.canvas{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+header {
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    background-color: black;
+    padding:.2em .5em;
+}
+
+h1 {
+    font-size: 1.2em;
+    border-bottom: 1px solid black;
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+h2 {
+    font-size: 1.2em;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    margin-top: 60px;
+}
+
+.left-panel {
+    float: left;
+    width: 200px;
+    box-sizing: border-box;
+
+}
+
+.right-panel{
+    margin-left: 200px;
+    box-sizing: border-box;
+
+}
+
+.left-panel ul{
+    margin: 0;
+padding: 0;
+
+}
+
+.left-panel ul li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.comment{
+    width: 100%;
+    margin-top: 20px;
+    text-decoration: none;
+}
+.comment-bottom{
+    width: 100%;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-bottom-style: dotted;
+}
+.item{
+    width: 230px;
+    float: left;
+    margin: 0.5em;
+    text-decoration: none;
+}
+.pink{
+    background-color: #dcace2;
+}
+.yellow{
+background-color: #dee289;
+}
+.water{
+background-color: #aee2de;
+}
+
+.item-header{
+    width: 214px;
+    float: left;
+    height: 20px;
+    overflow: hidden;
+    color: black;
+}
+
+.item-delete{
+    float:right;
+}
+.item-body{
+    width: 100%;
+    float:left ;
+    height: 5em;
+    overflow: hidden;
+    border-bottom: 1px solid black;
+
+}
+
+.item-footer{
+    text-align: right;
+    bottom: 0;
+}
+
+.detail{
+    border: 1px solid black;
+    width: 100%;
+    text-decoration: none;
+}
+.detail-header{
+    width: 100%;
+}
+.detail-body{
+    width: 100%;
+}
+.clearfix:after{
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.btn{
+    border: 1px solid dodgerblue;
+    border-radius: 2px;
+    color: black;
+    padding: .2em .5em;
+    text-decoration: none;
+}
+.btn:hover{
+    background-color: dodgerblue;
+    color: black;
+}

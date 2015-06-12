@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Untitled</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <% if flash[:notice].present? %>
+    <script>
+        jQuery(
+                function(){
+                    alert(<% raw flash[:notice].to_json %>);
+                }
+        );
+    </script>
+  <% end %>
+</head>
+<body>
+<div class="canvas">
+    <header>
+      <div>タスク管理アプリ</div>
+    </header>
+    <section>
+      <div class="left-panel">
+        <ul>
+            <li><%= link_to'タスクリスト', :tasks %></li>
+            <li><%= link_to'ユーザーリスト', :users %></li>
+        </ul>
+      </div>
+      <div>
+        <div class="right-panel">
+
+          <%= yield %>
+        </div>
+      </div>
+    </section>
+
+</div>
+</body>
+</html>

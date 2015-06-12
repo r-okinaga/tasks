@@ -1,0 +1,32 @@
+<ul><% task.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+  <% end %>
+</ul>
+<%= form_for (@task) do |f| %>
+    <table>
+      <tbody>
+      <tr>
+        <th>タスク名</th>
+        <td><%=  f.text_field :task_name %></td>
+      </tr>
+      <tr>
+        <th>詳細</th>
+        <td><%=  f.text_area :description %></td>
+      </tr>
+      <tr>
+        <th>締切日</th>
+        <td><%=  f.text_field :deadline %></td>
+      </tr>
+      <tr>
+        <th>タスクの色</th>
+        <td><%= f.radio_button :color, "pink" %>桃
+            <%= f.radio_button :color, "water" %>水
+            <%= f.radio_button :color, "yellow" %>黄
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+
+<%= f.submit nil, class: 'btn' %>
+<% end %>

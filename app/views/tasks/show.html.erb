@@ -1,0 +1,38 @@
+<h1>タスク詳細</h1>
+<%= link_to 'タスクリストへ', :tasks %>
+<%= link_to '編集画面へ', :edit_task %>
+<div class="clearfix">
+
+      <div class="detail @task.color" %>
+
+          <div class="detail-header"><%= @task.id %>:
+            <%= @task.task_name %></div>
+
+          <div class="detail-body"><%= simple_format @task.description %></div>
+          <div class="item-footer"><%= @task.deadline %></div>
+        </div>
+
+<div class="item-delete">
+<%= form_for @task, method: :delete do |f| %>
+    <%= f.submit '削除', onclick: 'return confirm("消していいですか");' %>
+<% end %>
+  </div>
+
+<h2>コメント一覧</h2>
+
+  <div class="comment"%>
+    <% @comments.each do |comment| %>
+        <%= comment.comment %>
+        <div class="comment-bottom"%><%= comment.times %>
+        <%= link_to '編集する', edit_task_comment_path(:id => comment.id,:task_id => params[:id]) %>
+            <%= form_tag task_comment_path(:task_id => params[:id],:id => comment.id), method: :delete,data: { confirm: "ほんとうに消しますか？" } do %>
+            <%= submit_tag '削除' %>
+        <% end %>
+        </div>
+        </div>
+      <% end %>
+</div>
+  </div>
+  <div class="item-footer">
+    <%= link_to 'コメントを追加する', new_task_comment_path(params[:id] ) %>
+      </div>

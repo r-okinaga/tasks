@@ -1,0 +1,24 @@
+<h1>Register</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Password</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.user_name %></td>
+        <td><%= user.age %></td>
+        <td><%= user.password %></td>
+        <td><%= link_to 'Detail', user_path(user) %></td>
+      </tr>
+  <% end %>
+
+  </tbody>
+</table>
+<%= link_to 'New User', :new_user %>
