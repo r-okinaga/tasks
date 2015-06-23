@@ -18,6 +18,12 @@
     <th>Password</th>
     <td><%= @user.password %></td>
   </tr>
+  <tr>
+    <th>タスク</th>
+    <td><% @tasks.each do |task| %></td>
+          <td><%=task.task_name %></td>
+          <% end %>
+  </tr>
   </tbody>
 </table>
 

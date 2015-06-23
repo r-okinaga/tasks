@@ -18,6 +18,11 @@
 <% end %>
   </div>
 
+  <h1>Users</h1>
+  <% @users.each do |user| %>
+    <%= user.user_name %>
+  <% end %>
+
 <h2>コメント一覧</h2>
 
   <div class="comment"%>

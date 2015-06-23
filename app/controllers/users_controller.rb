@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by!(id: params[:id])
+    @tasks = @user.tasks
   end
 
   def new
@@ -24,6 +25,7 @@ class UsersController < ApplicationController
   end
   def edit
     @user= User.find_by!(id: params[:id])
+    @tasks = Task.all
   end
   def update
     @user = User.find_by!(id: params[:id])

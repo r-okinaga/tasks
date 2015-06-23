@@ -7,6 +7,7 @@ class TasksController < ApplicationController
     @task = Task.find_by!(id: params[:id])
     @comments = @task.comments
     @comment = Comment.new
+    @users = @task.users
   end
 
   def new
